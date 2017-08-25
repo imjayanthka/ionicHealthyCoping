@@ -1,11 +1,20 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Goals
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <div class="row header center" center>
+    <div class="col">Goals</div>
+    <div class="col">Target</div>
+    <div class="col">Current Average</div>
+  </div>
+  <div class="row center" *ngFor="let data of datas">
+    <div class="col">{{data.goal}}</div>
+    <div class="col">{{data.target}}</div>
+    <div class="col">{{data.average}}</div>
+  </div>
 </ion-content>
