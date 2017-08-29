@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 import { DataEntryPage } from "../data-entry/data-entry"
+import { Hba1cPage } from "../hba1c/hba1c"
+import { WeightPage } from "../weight/weight"
 import * as HighCharts from 'highcharts';
 
 /**
@@ -19,6 +21,13 @@ export class ActivityPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController) {
   }
+
+
+    // // create(component, data, opts)
+    // let popover = this.popoverCtrl.create(DataEntryPage);
+    // popover.present({
+    //   ev: myEvent
+    // });
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ActivityPage');
@@ -48,12 +57,47 @@ export class ActivityPage {
   }
 
   openDataEntryPage() {
-    // // create(component, data, opts)
-    // let popover = this.popoverCtrl.create(DataEntryPage);
-    // popover.present({
-    //   ev: myEvent
-    // });
     this.navCtrl.push(DataEntryPage);
   }
+
+  openHba1cPage() {
+    this.navCtrl.push(Hba1cPage);
+  }
+
+  // openDataEntryPage() {
+  //   // // create(component, data, opts)
+  //   // let popover = this.popoverCtrl.create(DataEntryPage);
+  //   // popover.present({
+  //   //   ev: myEvent
+  //   // });
+  //   this.navCtrl.push(DataEntryPage);
+  // }
+
+  // openDataEntryPage() {
+  //   // // create(component, data, opts)
+  //   // let popover = this.popoverCtrl.create(DataEntryPage);
+  //   // popover.present({
+  //   //   ev: myEvent
+  //   // });
+  //   this.navCtrl.push(DataEntryPage);
+  // }
+
+  // openDataEntryPage() {
+  //   // // create(component, data, opts)
+  //   // let popover = this.popoverCtrl.create(DataEntryPage);
+  //   // popover.present({
+  //   //   ev: myEvent
+  //   // });
+  //   this.navCtrl.push(DataEntryPage);
+  // }
+
+  // openDataEntryPage() {
+  //   // // create(component, data, opts)
+  //   // let popover = this.popoverCtrl.create(DataEntryPage);
+  //   // popover.present({
+  //   //   ev: myEvent
+  //   // });
+  //   this.navCtrl.push(DataEntryPage);
+  // }
 
 }

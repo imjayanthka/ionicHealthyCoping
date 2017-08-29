@@ -1,0 +1,33 @@
+<!--
+  Generated template for the Hba1cPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>hba1c</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<form [formGroup]="hba1cData" (ngSubmit)="checkInformation()">
+  <ion-item>
+    <ion-label>HbA1c Reading</ion-label>
+    <ion-input type="number" formControlName="hba1cReadings"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime displayFormat="MM/DD/YYYY" formControlName="date"></ion-datetime>
+  </ion-item>
+  <ion-fab bottom left>
+    <button ion-fab><ion-icon name="cancel"></ion-icon></button>
+  </ion-fab>
+  <ion-fab bottom right>
+    <button ion-fab type="submit" [disabled]="!hba1cData.valid"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</form>
+</ion-content>

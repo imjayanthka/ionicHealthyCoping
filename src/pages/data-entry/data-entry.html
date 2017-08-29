@@ -7,18 +7,51 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Place Holder</ion-title>
+    <ion-title>Blood Glucose</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
-<ion-fab bottom right>
-  <button ion-fab><ion-icon name="add"></ion-icon></button>
-</ion-fab>
-<ion-fab bottom left>
-  <button ion-fab><ion-icon name="close"></ion-icon></button>
-</ion-fab>
+<form [formGroup]="bgData" (ngSubmit)="checkInformation()">
+  <ion-item>
+    <ion-label>Glucose Reading</ion-label>
+    <ion-input type="number" formControlName="bgReadings"></ion-input>
+    <ion-select formControlName="bgType">
+      <ion-option value="mmol">mmol/L</ion-option>
+      <ion-option value="mgdl">mg/dl</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime displayFormat="MM/DD/YYYY" formControlName="date"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Time</ion-label>
+    <ion-datetime displayFormat="HH:mm" formControlName="time"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Meal</ion-label>
+    <ion-select formControlName="meal">
+      <ion-option value={{meal.value}} *ngFor='let meal of meals'>{{meal.title}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Exercise</ion-label>
+    <ion-select formControlName="exercise">
+      <ion-option value={{option.value}} *ngFor='let option of exercise'>{{option.title}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Notes</ion-label>
+    <ion-textarea formControlName="notes"></ion-textarea>
+  </ion-item>
+  <ion-fab bottom left>
+    <button ion-fab><ion-icon name="cancel"></ion-icon></button>
+  </ion-fab>
+  <ion-fab bottom right>
+    <button ion-fab type="submit" [disabled]="!bgData.valid"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  </form>
 </ion-content>
